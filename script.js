@@ -95,10 +95,10 @@
 
  //array exercises
  //1
- var cars = ["Volvo", "BMW", "Audi", "Skoda", "Toyota", "Ford", "Mercedes", "Seat", "Honda", "Volkswagen", "Opel", "Mazda", "Suzuki"];
+ let cars = ["Volvo", "BMW", "Audi", "Skoda", "Toyota", "Ford", "Mercedes", "Seat", "Honda", "Volkswagen", "Opel", "Mazda", "Suzuki"];
  //1.a
  //cars with more than 5 characters
- var letters5 = cars.filter(function(bilN) {
+ let letters5 = cars.filter(function(bilN) {
 
      return bilN.length > 5;
  });
@@ -107,7 +107,7 @@
 
  //1.b
  //starts with V
- var nameV = cars.filter(function(name) {
+ let nameV = cars.filter(function(name) {
 
      return name.startsWith("V");
  });
@@ -115,7 +115,7 @@
 
  //1.c
  //contains da
- var nameda = cars.filter(function(name) {
+ let nameda = cars.filter(function(name) {
 
      return name.includes("da");
  });
@@ -123,7 +123,7 @@
 
  //1.d
  //starts with M or ends with i
- var nameMi = cars.filter(function(name) {
+ let nameMi = cars.filter(function(name) {
 
      return name.startsWith("M") || name.endsWith("i");
  });
@@ -131,13 +131,13 @@
 
 
  //2.
- var bands = ["ACDC", "Queen", "Aerosmith", "Iron Maiden", "Megadeth", "Metallica", "Pearl Jam", "Oasis", "Kiss", "Blur",
+ let bands = ["ACDC", "Queen", "Aerosmith", "Iron Maiden", "Megadeth", "Metallica", "Pearl Jam", "Oasis", "Kiss", "Blur",
      "Eurythmics", "Genesis", "INXS", "Midnight Oil", "Kent", "Madness", "Manic Street Preachers", "The Offspring", "Pink Floyd", "Rammstein", "Red Hot Chili Peppers", "Deep Purple", "U2"
  ];
 
  //2.a
  //longest name
- var longest = bands.sort(function(a, b) {
+ let longest = bands.sort(function(a, b) {
      return b.length - a.length;
  });
 
@@ -145,7 +145,7 @@
 
  //2.b
  //how many start with the same character
- var nameM = bands.filter(function(name) {
+ let nameM = bands.filter(function(name) {
 
      return name.startsWith("M");
  });
@@ -153,11 +153,11 @@
  console.log(nameM.length);
 
  //2.c
- var two_c2 = bands.filter(band => band.length >= 10);
+ let two_c2 = bands.filter(band => band.length >= 10);
  console.log(two_c2.sort());
 
  //step1-sort alphabetically
- var alpha = bands.sort(function(a, b) {
+ let alpha = bands.sort(function(a, b) {
      if (a < b) return -1;
      if (a > b) return 1;
      return 0;
@@ -165,14 +165,150 @@
  console.log(alpha);
 
  // step2-return array with elements length
- var alphal = bands.map(function(band) {
+ let alphal = bands.map(function(band) {
      return band.length;
  });
  console.log(alphal);
 
  //2.d
- var longestF = bands.sort(function(a, b) {
+ let longestF = bands.sort(function(a, b) {
      return b.length - a.length;
  });
 
  console.log(longestF);
+
+ //3
+ let integers = [54, 23, 76, 123, 93, 7, 3489, 88];
+
+ //3.a
+ //average of all the elements in the array
+ let average = (array) => array.reduce((a, b) => a + b) / array.length;
+ console.log(average(integers));
+
+ //3.b
+ //the biggest number
+ let largest = Math.max.apply(Math, integers);
+ console.log(largest);
+
+ //3.c
+ //sum of all the elements
+ let sum = integers.reduce(add, 0);
+
+ function add(a, b) {
+     return a + b;
+ }
+
+ console.log(sum);
+ //arrow function solution
+ sum = integers.reduce((a, b) => a + b, 0);
+ console.log(sum);
+ //or
+ let numbers = integers.reduce((total, amount) => total + amount);
+ console.log(numbers);
+
+ //3.d
+ //logs sum of numbers >70
+ function isBigEnough(value) {
+     return function(element) {
+         return (element >= value);
+     }
+ }
+ let filtered70 = integers.filter(isBigEnough(70));
+ let sum70 = filtered70.reduce((a, b) => a + b, 0);
+ console.log(sum70);
+
+ //3.e
+ //logs all even numbers
+ let even = integers.reduce(function(arr, num) {
+     if (num % 2 == 0) arr.push(num);
+     return arr;
+ }, []);
+ console.log(even);
+
+ //3.f
+ //adds 2 to every element in the array
+ let plus2 = integers.map(function(val) { return 2 + val; });
+ console.log(plus2);
+
+ //4
+ let countries = [{
+         name: "United Kingdom",
+         continent: "Europe",
+         population: 65270121,
+         pFemale: 0.508
+     },
+     {
+         name: "Republic of Ireland",
+         continent: "Europe",
+         population: 4708209,
+         pFemale: 0.499
+     },
+     {
+         name: "Australia",
+         continent: "Oceania",
+         population: 24482205,
+         pFemale: 0.502
+     },
+     {
+         name: "Taiwan",
+         continent: "Asia",
+         population: 23522296,
+         pFemale: 0.501
+     },
+     {
+         name: "Uruguay",
+         continent: "South America",
+         population: 3446772,
+         pFemale: 0.517
+     },
+     {
+         name: "Morocco",
+         continent: "Africa",
+         population: 35010005,
+         pFemale: 0.510
+     },
+     {
+         name: "Nigeria",
+         continent: "Africa",
+         population: 188688090,
+         pFemale: 0.494
+     },
+     {
+         name: "Zimbabwe",
+         continent: "Africa",
+         population: 16051510,
+         pFemale: 0.507
+     },
+     {
+         name: "China",
+         continent: "Asia",
+         population: 1381321335,
+         pFemale: 0.488
+     },
+     {
+         name: "Mexico",
+         continent: "North America",
+         population: 129386794,
+         pFemale: 0.507
+     },
+     {
+         name: "Canada",
+         continent: "North America",
+         population: 36446796,
+         pFemale: 0.504
+     },
+     {
+         name: "Czech Republic",
+         continent: " Europe ",
+         population: 10556351,
+         pFemale: 0.509
+     },
+     {
+         name: "Iceland",
+         continent: "Europe",
+         population: 332631,
+         pFemale: 0.496
+     }
+ ];
+
+ //
