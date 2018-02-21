@@ -311,12 +311,12 @@
      }
  ];
 
-<<<<<<< HEAD
+
  //4.a
-=======
+
  
 //4.a
->>>>>>> dd1f40bf2ce19efa70201688bc90842813d260e2
+
  //logs all the country names
  function getAllCountryNames(countryArray) {
 
@@ -442,9 +442,4 @@
  print(getCountriesWithPopulationAbove(countries, 50000000));
  //7
  print(getCountriesWithPopulationBetween(countries, 8000000, 15000000));
- //
-<<<<<<< HEAD
- print(getCountriesWithPopulationBetween(countries, ));
-=======
- print(getCountriesWithPopulationBetween(countries, ));
->>>>>>> dd1f40bf2ce19efa70201688bc90842813d260e2
+ 
