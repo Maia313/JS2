@@ -46,3 +46,5 @@ console.log(namnKArrow);
 let namnKaArrow = namnLista.filter(namn => namn.startsWith("K") && namn.endsWith("a") );
 
 console.log(namnKaArrow);
+
+
