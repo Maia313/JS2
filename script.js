@@ -311,4 +311,132 @@
      }
  ];
 
+ 
+//4.a
+ //logs all the country names
+ function getAllCountryNames(countryArray) {
+
+     //Array.map returns a new array based on the previous array. We must provide
+     //a callback function that will handle the looping 
+     return countryArray.map(function(country) {
+         return country.name; //The new array will only contain country.name
+     });
+ }
+
+ //4.b
+ //returns the total population of all countries in list
+
+ function getGlobalPopulation(countryArray) {
+
+     //The reduce function here has the following parameters: previous value & current value
+     //and we get a single number returned. Reduce reduces many numbers to one.
+     return countryArray.reduce(function(totalPopulation, country) {
+
+         //Here we are basically doing a for-loop that does: sum += i;
+         return totalPopulation + country.population;
+     }, 0); //0 as the second argument so totalPopulation starts at 0
+ }
+
+
+ //4.c
+ // Get a continents population based on passed parameter
+
+ function getContinentPopulation(countryArray, continent) {
+
+     //We can chain together multiple higher order functions
+     //First we filter the array, if the objects continent is the same as
+     //the parameter, it will be pushed into the new array.
+     return countryArray.filter(function(country) {
+             return country.continent == continent;
+         })
+         //Then we take the newly create array and we reduce the values to a sum
+         .reduce(function(totalPopulation, country) {
+             return totalPopulation + country.population;
+         }, 0);
+ }
+
+
+ //4.d
+ // Gets the least populated country in the list
+
+ function getLeastPopulatedCountry(countryArray) {
+     return countryArray.reduce(function(previousValue, value) {
+         return previousValue.population < value.population ? previousValue : value;
+     });
+ }
+
+
+ //4.e
+ // Get average population of all countries on a continent
+ function getContinentAveragePopulation(countryArray, continent) {
+     var countries = countryArray.filter(function(country) {
+         return country.continent == continent;
+     });
+     var totalPopulation = countries.reduce(function(totalPop, country) {
+         return totalPop += country.population;
+     }, 0);
+     return (totalPopulation / countries.length).toFixed(0);
+ }
+
+ //4.f
+ //Gets countries with population above a certain value
+
+ function getCountriesWithPopulationAbove(countryArray, min) {
+     //Returns a new array containing only countries with pop above min
+     return countryArray.filter(function(country) {
+         return country.population > min;
+     });
+ }
+
+ //4.g
+ // Gets countries between an interval
+
+ function getCountriesWithPopulationBetween(countryArray, min, max) {
+     //Just like a if statement, the filter function can take multiple conditions
+     return countryArray.filter(function(country) {
+         return country.population > min && country.population < max;
+     });
+ }
+
+
+ //Gets continent with the highest population
+ function getContinentWithHighestPopulation(countryArray) {
+
+
+     return countryArray.filter(function(country) {
+             return country.continent == continent;
+         })
+         //Then we take the newly created array and we reduce the values to a sum
+         .reduce(function(totalPopulation, country) {
+             return totalPopulation + country.population;
+         }, 0)
+         .reduce((totalPopulation, continent) => totalPopulation + continent);
+ }
+
+ // Helper function that prints the data passed to it with console log
+
+ function print(data) {
+     if (typeof data === 'array') { //If it's an array, map every value
+         data.map(function(countryData) {
+             console.log(countryData);
+         })
+     }
+     console.log(data); //else just print the value
+ }
+
+ //1
+ print(getAllCountryNames(countries));
+ //2
+ print(getGlobalPopulation(countries));
+ //3
+ print(getContinentPopulation(countries, 'Europe'));
+ //4
+ print(getLeastPopulatedCountry(countries));
+ //5
+ print(getContinentAveragePopulation(countries, 'Africa'));
+ //6
+ print(getCountriesWithPopulationAbove(countries, 50000000));
+ //7
+ print(getCountriesWithPopulationBetween(countries, 8000000, 15000000));
  //
+ print(getCountriesWithPopulationBetween(countries, ));
