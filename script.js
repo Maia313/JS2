@@ -314,9 +314,6 @@
 
  //4.a
 
- 
-//4.a
-
  //logs all the country names
  function getAllCountryNames(countryArray) {
 
@@ -404,17 +401,9 @@
 
 
  //Gets continent with the highest population
- function getContinentWithHighestPopulation(countryArray) {
+ function getContinentWithHighestPopulation() {
 
 
-     return countryArray.filter(function(country) {
-             return country.continent == continent;
-         })
-         //Then we take the newly created array and we reduce the values to a sum
-         .reduce(function(totalPopulation, country) {
-             return totalPopulation + country.population;
-         }, 0)
-         .reduce((totalPopulation, continent) => totalPopulation + continent);
  }
 
  // Helper function that prints the data passed to it with console log
@@ -442,4 +431,3 @@
  print(getCountriesWithPopulationAbove(countries, 50000000));
  //7
  print(getCountriesWithPopulationBetween(countries, 8000000, 15000000));
- 
