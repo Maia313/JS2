@@ -91,3 +91,88 @@
  for (let thisBook of price200_400Arrow) {
      console.log(thisBook.Title + " " + thisBook.Price);
  }
+
+
+ //array exercises
+ //1
+ var cars = ["Volvo", "BMW", "Audi", "Skoda", "Toyota", "Ford", "Mercedes", "Seat", "Honda", "Volkswagen", "Opel", "Mazda", "Suzuki"];
+ //1.a
+ //cars with more than 5 characters
+ var letters5 = cars.filter(function(bilN) {
+
+     return bilN.length > 5;
+ });
+
+ console.log(letters5);
+
+ //1.b
+ //starts with V
+ var nameV = cars.filter(function(name) {
+
+     return name.startsWith("V");
+ });
+ console.log(nameV);
+
+ //1.c
+ //contains da
+ var nameda = cars.filter(function(name) {
+
+     return name.includes("da");
+ });
+ console.log(nameda);
+
+ //1.d
+ //starts with M or ends with i
+ var nameMi = cars.filter(function(name) {
+
+     return name.startsWith("M") || name.endsWith("i");
+ });
+ console.log(nameMi);
+
+
+ //2.
+ var bands = ["ACDC", "Queen", "Aerosmith", "Iron Maiden", "Megadeth", "Metallica", "Pearl Jam", "Oasis", "Kiss", "Blur",
+     "Eurythmics", "Genesis", "INXS", "Midnight Oil", "Kent", "Madness", "Manic Street Preachers", "The Offspring", "Pink Floyd", "Rammstein", "Red Hot Chili Peppers", "Deep Purple", "U2"
+ ];
+
+ //2.a
+ //longest name
+ var longest = bands.sort(function(a, b) {
+     return b.length - a.length;
+ });
+
+ console.log(longest[0]);
+
+ //2.b
+ //how many start with the same character
+ var nameM = bands.filter(function(name) {
+
+     return name.startsWith("M");
+ });
+
+ console.log(nameM.length);
+
+ //2.c
+ var two_c2 = bands.filter(band => band.length >= 10);
+ console.log(two_c2.sort());
+
+ //step1-sort alphabetically
+ var alpha = bands.sort(function(a, b) {
+     if (a < b) return -1;
+     if (a > b) return 1;
+     return 0;
+ });
+ console.log(alpha);
+
+ // step2-return array with elements length
+ var alphal = bands.map(function(band) {
+     return band.length;
+ });
+ console.log(alphal);
+
+ //2.d
+ var longestF = bands.sort(function(a, b) {
+     return b.length - a.length;
+ });
+
+ console.log(longestF);
