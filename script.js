@@ -402,32 +402,35 @@
 
  //Gets continent with the highest population
  function getContinentWithHighestPopulation() {
+     //1.get all the continents population in an arrray
 
 
- }
 
- // Helper function that prints the data passed to it with console log
+     //2.compare the continents population & return the continent with the highest population
 
- function print(data) {
-     if (typeof data === 'array') { //If it's an array, map every value
-         data.map(function(countryData) {
-             console.log(countryData);
-         })
+
+     // Helper function that prints the data passed to it with console log
+
+     function print(data) {
+         if (typeof data === 'array') { //If it's an array, map every value
+             data.map(function(countryData) {
+                 console.log(countryData);
+             });
+         }
+         console.log(data); //else just print the value
      }
-     console.log(data); //else just print the value
- }
 
- //1
- print(getAllCountryNames(countries));
- //2
- print(getGlobalPopulation(countries));
- //3
- print(getContinentPopulation(countries, 'Europe'));
- //4
- print(getLeastPopulatedCountry(countries));
- //5
- print(getContinentAveragePopulation(countries, 'Africa'));
- //6
- print(getCountriesWithPopulationAbove(countries, 50000000));
- //7
- print(getCountriesWithPopulationBetween(countries, 8000000, 15000000));
+     //1
+     print(getAllCountryNames(countries));
+     //2
+     print(getGlobalPopulation(countries));
+     //3
+     print(getContinentPopulation(countries, 'Europe'));
+     //4
+     print(getLeastPopulatedCountry(countries));
+     //5
+     print(getContinentAveragePopulation(countries, 'Africa'));
+     //6
+     print(getCountriesWithPopulationAbove(countries, 50000000));
+     //7
+     print(getCountriesWithPopulationBetween(countries, 8000000, 15000000));
