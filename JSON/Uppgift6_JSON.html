@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var classList = {
+            "className": "FEND17",
+            "students": [{
+                "name": "Lisa Lind",
+                "email": "Lisalind@gmail.com"
+            }, {
+                "name": "Kalle Karlsson",
+                "email": "kalleK@gmail.com"
+            }, {
+                "name": "Anna Persson",
+                "email": "annaP@gmail.com"
+            }]
+        };
+
+        var newHeader = document.createElement('h1');
+        var text = document.createTextNode(classList.className);
+        newHeader.appendChild(text);
+
+        //Lägg till taggen direkt i bodyn på sidan
+        document.body.appendChild(newHeader);
+
+        var myList = document.createElement('ul');
+        var text;
+
+        for (var student of classList.students) {
+            let listRow = document.createElement('li');
+            text = document.createTextNode(student.name);
+            listRow.appendChild(text);
+            myList.appendChild(listRow);
+        }
+
+        document.body.appendChild(myList);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+    <link href="productList.json" type="json">
+
+
+
+
+
+</head>
+
+<body>
+    <input type="text" id="searchValue" placeholder="enter a search string">
+    <input type="button" id="cmdSearch" value="Search" onclick="ProductSearch()">
+
+    <br>
+    <br>
+
+    <div id="SearchResult">
+
+    </div>
+
+    <script type="text/javascript">
+        function ProductSearch() {
+            let productList = {
+                "products": [{
+                    "name": "Samsung Galaxy S8",
+                    "price": "5999",
+                    "image": "https://s7d2.scene7.com/is/image/SamsungUS/hero-SM-G892AZAAATT-081217-v2?$product-details-jpg$"
+                }, {
+                    "name": "iPhone 8",
+                    "price": "6999",
+                    "image": "https://i.gadgets360cdn.com/large/iphone8_benjamingesking_main_1502349465364.jpg?output-quality=70&output-format=webp"
+                }, {
+                    "name": "Huawei 10",
+                    "price": "6999",
+                    "image": "https://www.vopmart.com/media/catalog/product/cache/1/image/470x470/9df78eab33525d08d6e5fb8d27136e95/u/a/uawei-p10-plus-green_1.jpg"
+                }]
+            };
+
+
+            let search = document.getElementbyId("searchValue");
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

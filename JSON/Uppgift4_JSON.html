@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var person = {
+            "fornamn": "Lisa",
+            "efternamn": "Lind",
+            "adress": {
+                "gata": "Storgatan 3",
+                "postort": "Södertälje",
+                "postnr": "11122"
+            },
+            "kurser": ["Javascript1", "Javascript2", "Webbdesign"]
+        };
+
+
+        var studentName = document.createElement('h1');
+        var text = document.createTextNode(person.fornamn + " " + person.efternamn);
+        studentName.appendChild(text);
+
+        //Lägg till taggen direkt i bodyn på sidan
+        document.body.appendChild(studentName);
+
+        var adress = document.createElement('h3');
+        text = document.createTextNode(person.adress.gata + "," + person.adress.postnr + " " + person.adress.postort);
+        adress.appendChild(text);
+
+        document.body.appendChild(adress);
+
+        var kurser = document.createElement('h3');
+        text = document.createTextNode("Du har klarat följande kurser");
+        kurser.appendChild(text);
+        var kursList = document.createElement('ul');
+
+        for (var kurs of person.kurser) {
+            let kursRow = document.createElement('li');
+            text = document.createTextNode(kurs);
+            kursRow.appendChild(text);
+            kursList.appendChild(kursRow);
+        }
+
+        kurser.appendChild(kursList);
+        document.body.appendChild(kurser);
+    </script>
+
+</body>
+
+</html>
