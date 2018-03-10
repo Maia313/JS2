@@ -2,6 +2,7 @@
 
 
     -Functional programming;
-    -Arrays:filter, map, reduce;
+    -Array methods:filter, map, reduce;
     -JSON & AJAX;
     -Web API;
+    -Cookies & webstorage;
