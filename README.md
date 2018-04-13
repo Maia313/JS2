@@ -11,26 +11,26 @@
 
 #### Creational
 
-** Constructor
-** Factory
-** Abstract
-** Prototype
-** Singleton
-** Builder
+* Constructor
+* Factory
+* Abstract
+* Prototype
+* Singleton
+* Builder
 
 #### Structural
 
-** Decorator
-** Facade
-** Flyweight
-** Adapter
-** Proxy
+* Decorator
+* Facade
+* Flyweight
+* Adapter
+* Proxy
 
 #### Behavioral
 
-** Iterator
-** Mediator
-** Observer
-** Visitor
+* Iterator
+* Mediator
+* Observer
+* Visitor
 
 
