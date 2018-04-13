@@ -6,3 +6,31 @@
     - JSON & AJAX;
     - Web API;
     - Cookies & webstorage;
+    
+## Design patterns:
+
+#### Creational
+
+** Constructor
+** Factory
+** Abstract
+** Prototype
+** Singleton
+** Builder
+
+#### Structural
+
+** Decorator
+** Facade
+** Flyweight
+** Adapter
+** Proxy
+
+#### Behavioral
+
+** Iterator
+** Mediator
+** Observer
+** Visitor
+
+
