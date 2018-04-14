@@ -12,6 +12,19 @@
 #### Creational
 
 * Constructor
+
+    // Each of the following options will create a new empty object:
+ 
+        var newObject = {};
+ 
+    // or
+    
+        var newObject = Object.create( Object.prototype );
+ 
+    // or
+    
+        var newObject = new Object();
+        
 * Factory  -  This makes an instance of several derived classes based on interfaced data or events.
 * Abstract  -  Creates an instance of several families of classes without detailing concrete classes.
 * Prototype  -  A fully initialized instance used for copying or cloning.
@@ -34,12 +47,3 @@
 * Visitor  -  Adds a new operation to a class without changing the class.
 
 
-// Each of the following options will create a new empty object:
- 
-var newObject = {};
- 
-// or
-var newObject = Object.create( Object.prototype );
- 
-// or
-var newObject = new Object();
